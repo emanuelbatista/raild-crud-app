@@ -9,7 +9,7 @@
 
 <h1>Fornecedors</h1>
 
-<table data-toggle="table" data-pagination="true" data-search="true">
+<table data-toggle="table" data-pagination="true" data-search="true" class="table table-striped">
   <thead>
     <tr>
       <th>Nome</th>
@@ -23,7 +23,7 @@
       <tr>
         <td><%= fornecedor.nome %></td>
         <td><%= fornecedor.ativo %></td>
-        <td><%= link_to 'Show', fornecedor %> <%= link_to 'Edit', edit_fornecedor_path(fornecedor) %> <%= link_to 'Destroy', fornecedor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', fornecedor , :class => 'btn btn-default btn-xs'%> <%= link_to 'Edit', edit_fornecedor_path(fornecedor) , :class => 'btn btn-default btn-xs'%> <%= link_to 'Destroy', fornecedor, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn btn-default btn-xs btn-danger'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Fornecedor', new_fornecedor_path %>
+<%= link_to 'New Fornecedor', new_fornecedor_path , :class => 'btn btn-primary'%>
