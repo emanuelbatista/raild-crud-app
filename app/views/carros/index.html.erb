@@ -9,7 +9,7 @@
 
 <h1>Carros</h1>
 
-<table data-toggle="table" data-pagination="true" >
+<table data-toggle="table" data-pagination="true"  class="table table-striped">
   <thead>
     <tr>
       <th>Modelo</th>
@@ -23,7 +23,7 @@
       <tr>
         <td><%= carro.modelo %></td>
         <td><%= carro.ano %></td>
-        <td><%= link_to 'Show', carro %> <%= link_to 'Edit', edit_carro_path(carro) %> <%= link_to 'Destroy', carro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', carro , :class => 'btn btn-default btn-xs'%> <%= link_to 'Edit', edit_carro_path(carro) , :class => 'btn btn-default btn-xs'%> <%= link_to 'Destroy', carro, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn btn-default btn-xs btn-danger'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Carro', new_carro_path %>
+<%= link_to 'New Carro', new_carro_path , :class => 'btn btn-primary'%>

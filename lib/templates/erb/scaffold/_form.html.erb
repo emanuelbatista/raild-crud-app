@@ -19,7 +19,7 @@
     <div class="field">
       <%%= f.label :<%= attribute.column_name %>, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <% if attribute.type == :integer -%>
+        <% if attribute.type == :integer && singular_table_name == "pessoa" -%>
           <%%= f.text_field :<%= attribute.column_name %>, { :class => 'form-control', :data => {
           'slider-id' => '<%= attribute.column_name %>Slider', 'slider-min' => '0',
           'slider-max' => '20', 'slider-step' => '1' } } %>

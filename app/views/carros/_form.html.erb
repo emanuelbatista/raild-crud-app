@@ -1,27 +1,35 @@
-<%= form_for(carro) do |f| %>
-  <% if carro.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(carro.errors.count, "error") %> prohibited this carro from being saved:</h2>
-
-      <ul>
-      <% carro.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @carro, :html => { :class => "form-horizontal" } do |f| %>
+  <% if @carro.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= pluralize(@carro.errors.count, "error") %> prohibited this 
+          carro from being saved:
+        </h3>
+      </div>
+      <div class="panel-body">
+        <ul><% carro.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %></ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :modelo %>
-    <%= f.text_field :modelo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ano %>
-    <%= f.date_select :ano %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+      <div class="field">
+      <%= f.label :modelo, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+                  <%= f.text_field :modelo, :class => 'form-control' %>
+              </div>
+    </div>
+      <div class="field">
+      <%= f.label :ano, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+                  <%= f.date_select :ano, :class => 'form-control' %>
+              </div>
+    </div>
+    <div class="actions">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
