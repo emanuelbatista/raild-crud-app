@@ -19,7 +19,14 @@
     <div class="field">
       <%%= f.label :<%= attribute.column_name %>, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, :class => 'form-control' %>
+        <% if attribute.type == :integer -%>
+          <%%= f.text_field :<%= attribute.column_name %>, { :class => 'form-control', :data => {
+          'slider-id' => '<%= attribute.column_name %>Slider', 'slider-min' => '0',
+          'slider-max' => '20', 'slider-step' => '1' } } %>
+          <script type="text/javascript">$("#<%= singular_table_name %>_<%= attribute.column_name %>").slider({});</script>
+        <% else -%>
+          <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, :class => 'form-control' %>
+        <% end -%>
       </div>
     </div>
   <% end -%>

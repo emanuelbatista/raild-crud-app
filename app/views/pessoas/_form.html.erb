@@ -18,14 +18,17 @@
       <div class="field">
       <%= f.label :nome, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <%= f.text_field :nome, :class => 'form-control' %>
-      </div>
+                  <%= f.text_field :nome, :class => 'form-control' %>
+              </div>
     </div>
       <div class="field">
       <%= f.label :idade, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <%= f.number_field :idade, :class => 'form-control' %>
-      </div>
+                  <%= f.text_field :idade, { :class => 'form-control', :data => {
+          'slider-id' => 'idadeSlider', 'slider-min' => '0',
+          'slider-max' => '20', 'slider-step' => '1' } } %>
+          <script type="text/javascript">$("#pessoa_idade").slider({});</script>
+              </div>
     </div>
     <div class="actions">
     <div class="col-lg-offset-2 col-lg-10">
