@@ -33,7 +33,10 @@
 
   <div class="field">
     <%= f.label :altura %>
-    <%= f.text_field :altura %>
+    <%= f.text_field :altura, { :class => 'form-control', :data => {
+    'slider-id' => 'alturaSlider', 'slider-min' => '0',
+    'slider-max' => '20', 'slider-step' => '0.1' } } %>
+    <script type="text/javascript">$("#cliente_altura").slider({});</script>
   </div>
 
   <div class="actions">

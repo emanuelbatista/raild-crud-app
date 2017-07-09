@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<p id="notice"><%= notice %></p>
+
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @pessoa.nome %></dd>
+  <dt><strong>Idade:</strong></dt>
+  <dd><%= @pessoa.idade %></dd>
+</dl>
+
+<%= link_to 'Edit', edit_pessoa_path(@pessoa) %> |
+<%= link_to 'Back', pessoas_path %>
