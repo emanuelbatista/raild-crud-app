@@ -9,7 +9,7 @@
 
 <h1><%= plural_table_name.titleize %></h1>
 
-<table data-toggle="table" data-pagination="true" data-search="true">
+<table data-toggle="table" data-pagination="true" <% if singular_table_name != "carro" %>data-search="true"<% end %>>
   <thead>
     <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
